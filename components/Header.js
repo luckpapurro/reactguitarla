@@ -8,12 +8,15 @@ const Header = () => {
       <div className="contenedor">
         <div className={styles.barra}>
           <Link href="/">
-            <Image
-              width={400}
-              height={100}
-              src="/img/logo.svg"
-              alt="Imagen logo"
-            />
+            <a>
+              {/* clase 211 como tiraba unos errores explica que si dentro de Link hay imagenes se deben guardar dentro de una etiqueta de enlace*/}
+              <Image
+                width={400}
+                height={100}
+                src="/img/logo.svg"
+                alt="Imagen logo"
+              />
+            </a>
           </Link>
           <nav className={styles.navegacion}>
             <Link href="/">Inicio</Link>
