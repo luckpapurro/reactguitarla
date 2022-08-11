@@ -40,3 +40,12 @@
   background-color: var(--primary);
   color: var(--blanco);
 }
+
+.entrada {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.texto {
+  white-space: pre-wrap; /* hace punto y aparte con espacio en cada parrafo */
+}
