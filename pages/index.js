@@ -1,11 +1,11 @@
-import Layout from "../components/Layout";
+import Layout from '../components/Layout'
 
 const Home = () => {
-  return (
-    <Layout nombrepestana="Inicio">
-      <h1>Desde inicio</h1>
-    </Layout>
-  );
-};
+   return (
+      <Layout nombrepestana="Inicio">
+         <h1>Desde inicio</h1>
+      </Layout>
+   )
+}
 
-export default Home;
+export default Home

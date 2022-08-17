@@ -1,7 +1,7 @@
 export const formatearFecha = (fecha) => {
-  const fechaFormateada = new Date(fecha);
+   const fechaFormateada = new Date(fecha)
 
-  const opciones = { year: "numeric", month: "long", day: "2-digit" };
+   const opciones = { year: 'numeric', month: 'long', day: '2-digit' }
 
-  return fechaFormateada.toLocaleDateString("es-ES", opciones);
-};
+   return fechaFormateada.toLocaleDateString('es-ES', opciones)
+}

@@ -1,14 +1,11 @@
 .contenido {
-  display: grid;
-  gap: 4rem;
+   display: grid;
+   gap: 4rem;
 }
 
 @media (min-width: 768px) {
-  .contenido {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* dos columnas de una fraccion cada una */
-    align-items: center;
-  }
+   .contenido {
+      grid-template-columns: repeat(2, 1fr); /* dos columnas de una fraccion cada una */
+      align-items: center;
+   }
 }
