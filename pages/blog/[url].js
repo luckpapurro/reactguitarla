@@ -31,20 +31,20 @@ const EntradaBlog = ({ entrada }) => {
 
 // Con getStaticPaths (compila el proyecto antes de subirlo, mas rapido y seguro) al tener routing dinamico es mas complicado
 
-export async function getStaticProps({ params: { id } }) {
-  const url = `${process.env.API_URL}/blogs/${id}`;
-  const respuesta = await fetch(url);
-  const entrada = await respuesta.json();
-  return { props: { entrada: entrada } };
-}
 export async function getStaticPaths() {
   const url = `${process.env.API_URL}/blogs`;
   const respuesta = await fetch(url);
   const entradas = await respuesta.json();
   const paths = entradas.map((entrada) => ({
-    params: { id: entrada.id.toString() },
+    params: { url: entrada.url },
   }));
   return { paths, fallback: false };
+}
+export async function getStaticProps({ params: { url } }) {
+  const url = `${process.env.API_URL}/blogs/${id}`;
+  const respuesta = await fetch(url);
+  const entrada = await respuesta.json();
+  return { props: { entrada: entrada } };
 }
 
 // Con getServerSideProps (mas dinamico)
