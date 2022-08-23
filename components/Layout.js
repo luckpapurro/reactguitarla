@@ -5,11 +5,11 @@ import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ children, nombrepestana }) => {
+const Layout = ({ children, nombrePestana }) => {
    return (
       <div>
          <Head>
-            <title>Guitar LA - {nombrepestana}</title>
+            <title>Guitar LA - {nombrePestana}</title>
             <meta name="description" content="Sitio web de venta de guitarras" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

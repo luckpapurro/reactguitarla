@@ -4,26 +4,34 @@ import styles from '../../styles/Guitarra.module.css'
 
 const Producto = ({ guitarra }) => {
    const { descripcion, imagen, nombre, precio, url } = guitarra[0]
-   console.log(guitarra)
 
    return (
-      <Layout nombrepestana={url}>
-         <main className="contenedor">
-            <h1 className="heading">{nombre}</h1>
-            <article>
-               <Image
-                  layout="responsive"
-                  width={800}
-                  height={600}
-                  src={imagen.url}
-                  alt={`imagen guitarra ${nombre}`}
-               ></Image>
-               <div>
-                  <p>{descripcion}</p>
-                  <p>U$D {precio}</p>
-               </div>
-            </article>
-         </main>
+      <Layout nombrePestana={`Guitarra ${nombre}`}>
+         <div className={styles.guitarra}>
+            <Image
+               src={imagen.url}
+               layout="responsive"
+               width={150}
+               height={350}
+               alt={`Imagen Guitarra ${nombre}`}
+            />
+            <div className={styles.contenido}>
+               <h3>{nombre}</h3>
+               <p className={styles.descripcion}>{descripcion}</p>
+               <p className={styles.precio}>U$D {precio}</p>
+
+               <form className={styles.formulario}>
+                  <label>Cantidad:</label>
+                  <select>
+                     <option value="">-- Seleccione --</option>
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                  </select>
+                  <input type="submit" value="Agregar al carrito"></input>
+               </form>
+            </div>
+         </div>
       </Layout>
    )
 }

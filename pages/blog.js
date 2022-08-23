@@ -21,7 +21,7 @@ const Blog = ({ entradas }) => {
    //
 
    return (
-      <Layout nombrepestana="Blog">
+      <Layout nombrePestana="Blog">
          <main className="contenedor">
             <h2 className="heading">Blog</h2>
             <div className={styles.blog}>

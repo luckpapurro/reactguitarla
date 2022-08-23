@@ -10,7 +10,7 @@ const Guitarra = ({ guitarra }) => {
          <Image
             src={imagen.url}
             layout="responsive"
-            width={180}
+            width={150}
             height={350}
             alt={`Imagen Guitarra ${nombre}`}
          />

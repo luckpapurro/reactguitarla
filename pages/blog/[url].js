@@ -8,7 +8,7 @@ const EntradaBlog = ({ entrada }) => {
    console.log(entrada)
 
    return (
-      <Layout nombrepestana={titulo}>
+      <Layout nombrePestana={titulo}>
          <main className="contenedor">
             <h1 className="heading">{titulo}</h1>
             <article className={styles.entrada}>

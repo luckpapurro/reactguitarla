@@ -4,7 +4,7 @@ import styles from '../styles/Tienda.module.css'
 
 const Tienda = ({ guitarras }) => {
    return (
-      <Layout nombrepestana="Tienda Virtual">
+      <Layout nombrePestana="Tienda Virtual">
          <main className="contenedor">
             <h1 className="heading">Nuestra Coleccion</h1>
             <div className={styles.listado}>
