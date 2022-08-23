@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import ListadoGuitarras from '../components/ListadoGuitarras'
 import Guitarra from '../components/Guitarra'
 import styles from '../styles/Tienda.module.css'
 
@@ -7,11 +8,7 @@ const Tienda = ({ guitarras }) => {
       <Layout nombrePestana="Tienda Virtual">
          <main className="contenedor">
             <h1 className="heading">Nuestra Coleccion</h1>
-            <div className={styles.listado}>
-               {guitarras.map((guitarra) => (
-                  <Guitarra key={guitarra.url} guitarra={guitarra} />
-               ))}
-            </div>{' '}
+            <ListadoGuitarras guitarras={guitarras} />
          </main>
       </Layout>
    )
