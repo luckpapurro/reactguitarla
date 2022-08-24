@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Header.module.css'
 
-const Header = () => {
+const Header = ({ guitarra }) => {
    return (
       <header className={styles.header}>
          <div className="contenedor">
@@ -20,6 +20,17 @@ const Header = () => {
                   <Link href="/guitarras">Tienda</Link>
                </nav>
             </div>
+
+            {guitarra && (
+               <div className={styles.modeloGuitarra}>
+                  <h2>Modelo {guitarra.nombre}</h2>
+                  <p>{guitarra.descripcion}</p>
+                  <p className={styles.precio}>${guitarra.precio}</p>
+                  <Link href={`/guitarras/${guitarra.url}`}>
+                     <a className={styles.enlace}>Ver Producto</a>
+                  </Link>
+               </div>
+            )}
          </div>
       </header>
    )

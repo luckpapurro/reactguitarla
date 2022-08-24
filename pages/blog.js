@@ -1,7 +1,4 @@
-import { useEffect } from 'react'
 import Layout from '../components/Layout'
-import Entrada from '../components/Entrada'
-import styles from '../styles/Blog.module.css'
 import ListadoBlogs from '../components/ListadoBlogs'
 
 const Blog = ({ entradas }) => {
@@ -14,24 +11,6 @@ const Blog = ({ entradas }) => {
    )
 }
 
-//
-// La forma clasica de pegarle a una API pero ya no se usa en NEXT.JS
-// useEffect(() => {
-//   const consultarAPI = async () => {
-//     const url = `${process.env.API_URL}/blogs`;
-//     const respuesta = await fetch(url);
-//     const resultado = await respuesta.json();
-
-//     console.log(resultado);
-//   };
-//   consultarAPI();
-// }, []);
-//
-// Uso la forma de abajo "getServerSideProps o getStaticProps"
-//
-
-// getServerSideProps y getStaticProps siempre se hacen desde PAGES, nunca desde componentes
-
 export async function getStaticProps() {
    const url = `${process.env.API_URL}/blogs?_sort=createdAt:desc`
    const respuesta = await fetch(url)
@@ -40,3 +19,15 @@ export async function getStaticProps() {
 }
 
 export default Blog
+//
+// La forma clasica de pegarle a una API pero ya no se usa en NEXT.JS
+// useEffect(() => {
+//   const consultarAPI = async () => {
+//     const url = `${process.env.API_URL}/blogs`;
+//     const respuesta = await fetch(url);
+//     const resultado = await respuesta.json();
+//   };
+//   consultarAPI();
+// }, []); (este es el useEffect)
+//
+// Se usa "getServerSideProps o getStaticProps" ambos siempre se hacen desde PAGES, nunca desde componentes

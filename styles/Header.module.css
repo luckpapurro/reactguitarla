@@ -45,3 +45,54 @@
 .navegacion a:hover {
    background-color: var(--primary);
 }
+
+.modeloGuitarra {
+   color: var(--blanco);
+   margin-top: 5rem;
+   text-align: center;
+}
+
+@media (min-width: 768px) {
+   .modeloGuitarra {
+      text-align: left;
+      width: 50%;
+   }
+}
+
+.modeloGuitarra h2 {
+   font-size: 6rem;
+}
+
+.modeloGuitarra p:first-of-type {
+   display: -webkit-box;
+   -webkit-box-orient: vertical; /*comandos de css para hacer que se vean solo 6 lineas de texto */
+   -webkit-line-clamp: 3;
+   overflow: hidden;
+   font-size: 2rem;
+}
+
+.precio {
+   font-size: 5rem;
+   color: var(--primary);
+   font-weight: 900;
+   line-height: 0;
+}
+
+.enlace {
+   margin-top: 2rem;
+   text-decoration: none;
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 1.1rem;
+   font-weight: 900;
+   color: var(--blanco);
+   border: 2px solid var(--primary);
+   padding: 1rem 5rem;
+   transition-property: background-color;
+   transition-duration: 0.3s;
+}
+
+.enlace:hover {
+   background-color: var(--primary);
+   color: var(--blanco);
+}

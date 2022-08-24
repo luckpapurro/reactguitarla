@@ -16,10 +16,17 @@
    text-transform: uppercase;
 }
 
-.descripcion {
+.descripcionTodas {
    display: -webkit-box;
    -webkit-box-orient: vertical; /*comandos de css para hacer que se vean solo 6 lineas de texto */
    -webkit-line-clamp: 6;
+   overflow: hidden;
+   font-size: 1.6rem;
+}
+
+.descripcionUnica {
+   display: -webkit-box;
+   -webkit-box-orient: vertical; /*comandos de css para hacer que se vean solo 6 lineas de texto */
    overflow: hidden;
    font-size: 1.6rem;
 }

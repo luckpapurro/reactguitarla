@@ -1,20 +1,18 @@
 import Layout from '../components/Layout'
-import Guitarra from '../components/Guitarra'
 import Curso from '../components/Curso'
+import ListadoGuitarras from '../components/ListadoGuitarras'
 import ListadoBlogs from '../components/ListadoBlogs'
-import styles from '../styles/Tienda.module.css'
 
 const Home = ({ guitarras, curso, entradas }) => {
    return (
-      <Layout nombrePestana="Inicio">
+      <Layout
+         nombrePestana="Inicio" // paso una guitarra en las props a Layout
+         guitarra={guitarras[3]}
+      >
          <main className="contenedor">
-            <h1 className="heading">Nuestra Coleccion</h1>
+            <h1 className="heading">Nuestras Guitarras</h1>
 
-            <div className={styles.listado}>
-               {guitarras.map((guitarra) => (
-                  <Guitarra key={guitarra.url} guitarra={guitarra} />
-               ))}
-            </div>
+            <ListadoGuitarras guitarras={guitarras} />
          </main>
 
          <Curso curso={curso} />
@@ -26,9 +24,9 @@ const Home = ({ guitarras, curso, entradas }) => {
    )
 }
 export async function getServerSideProps() {
-   const urlGuitarras = `${process.env.API_URL}/guitarras?_sort=published_at:desc` // el ?... es para que ordene por ultimo creado (opcion precio)
+   const urlGuitarras = `${process.env.API_URL}/guitarras?_sort=published_at:desc` // Strapi el ?... es para que ordene por ultimo creado (opcion precio)
    const urlCurso = `${process.env.API_URL}/cursos`
-   const urlBlog = `${process.env.API_URL}/blogs?_limit=3&sort=createdAt:desc` // _limit=3& limita la respuesta a solo 3
+   const urlBlog = `${process.env.API_URL}/blogs?_limit=3&_sort=createdAt:desc` // Strapi _limit=3& limita la respuesta a solo 3
 
    const [resGuitarras, resCurso, resBlog] = await Promise.all([
       fetch(urlGuitarras),

@@ -1,9 +1,8 @@
-import Image from 'next/image'
 import styles from '../styles/Curso.module.css'
 
 const Curso = ({ curso }) => {
    const { titulo, contenido, imagen } = curso
-   console.log('🚀 ~ file: Curso.js ~ line 6 ~ Curso ~ imagen', imagen.url)
+
    return (
       <section>
          <div className={`contenedor ${styles.grid}`}>

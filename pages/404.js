@@ -1,5 +1,5 @@
-import Layout from '../components/Layout'
 import Link from 'next/link'
+import Layout from '../components/Layout'
 import styles from '../styles/NoEncontrado.module.css'
 
 const NoEncontrado = () => {
