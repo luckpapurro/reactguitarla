@@ -7,7 +7,7 @@ const Home = ({ guitarras, curso, entradas }) => {
    return (
       <Layout
          nombrePestana="Inicio" // paso una guitarra en las props a Layout
-         guitarra={guitarras[3]}
+         guitarra={guitarras[8]}
       >
          <main className="contenedor">
             <h1 className="heading">Nuestras Guitarras</h1>

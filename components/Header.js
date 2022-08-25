@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import styles from '../styles/Header.module.css'
 
 const Header = ({ guitarra }) => {
+   const router = useRouter()
+
    return (
       <header className={styles.header}>
          <div className="contenedor">
@@ -18,6 +21,17 @@ const Header = ({ guitarra }) => {
                   <Link href="/nosotros">Nosotros</Link>
                   <Link href="/blog">Blog</Link>
                   <Link href="/guitarras">Tienda</Link>
+                  <Link href="/carrito">
+                     <a>
+                        <Image
+                           layout="fixed"
+                           width={30}
+                           height={25}
+                           src="/img/carrito.png"
+                           alt="Imagen carrito"
+                        />
+                     </a>
+                  </Link>
                </nav>
             </div>
 
@@ -32,6 +46,17 @@ const Header = ({ guitarra }) => {
                </div>
             )}
          </div>
+         {router.pathname === '/' && ( // comprueba que router.pathname ( "/" ) sea igual a "/""
+            <div className={styles.guitarra}>
+               <Image
+                  src="/img/header_guitarra.png"
+                  layout="fixed"
+                  width={450}
+                  height={1000}
+                  alt="imagen header guitarra"
+               />
+            </div>
+         )}
       </header>
    )
 }
