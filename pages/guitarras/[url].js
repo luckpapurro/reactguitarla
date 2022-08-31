@@ -1,12 +1,25 @@
+import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import styles from '../../styles/Guitarra.module.css'
 
 const Producto = ({ guitarra, agregarCarrito }) => {
-   const { descripcion, imagen, nombre, precio, url } = guitarra[0]
+   const [cantidad, setCantidad] = useState(1)
+
+   const { descripcion, imagen, nombre, precio, id } = guitarra[0]
 
    const handleSubmit = (e) => {
       e.preventDefault()
+
+      if (cantidad < 1) {
+         alert('Cantidad no valida')
+         return
+      }
+
+      const guitarraSleccionada = { id, imagen: imagen.url, nombre, precio, cantidad }
+
+      agregarCarrito(guitarraSleccionada)
    }
 
    return (
@@ -22,18 +35,24 @@ const Producto = ({ guitarra, agregarCarrito }) => {
             <div className={styles.contenido}>
                <h3>{nombre}</h3>
                <p className={styles.descripcionUnica}>{descripcion}</p>
-               <p className={styles.precio}>U$D {precio}</p>
+               <p className={styles.precio}>USD {precio}</p>
 
-               <form className={styles.formulario}>
+               <form className={styles.formulario} onSubmit={handleSubmit}>
                   <label>Cantidad:</label>
-                  <select>
-                     <option value="">-- Seleccione --</option>
+                  <select
+                     value={cantidad} //
+                     onChange={(e) => setCantidad(parseInt(e.target.value))}
+                  >
+                     <option value="0">-- Seleccione --</option>
                      <option value="1">1</option>
                      <option value="2">2</option>
                      <option value="3">3</option>
                   </select>
                   <input type="submit" value="Agregar al carrito"></input>
                </form>
+               <Link href={`/guitarras/`}>
+                  <a className={styles.enlace}>Volver a tienda online</a>
+               </Link>
             </div>
          </div>
       </Layout>
