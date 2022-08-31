@@ -2,8 +2,12 @@ import Image from 'next/image'
 import Layout from '../../components/Layout'
 import styles from '../../styles/Guitarra.module.css'
 
-const Producto = ({ guitarra }) => {
+const Producto = ({ guitarra, agregarCarrito }) => {
    const { descripcion, imagen, nombre, precio, url } = guitarra[0]
+
+   const handleSubmit = (e) => {
+      e.preventDefault()
+   }
 
    return (
       <Layout nombrePestana={`Guitarra ${nombre}`}>

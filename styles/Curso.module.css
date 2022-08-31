@@ -9,7 +9,7 @@
 .contenido {
    display: flex;
    flex-direction: column;
-   align: center;
+   align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -21,7 +21,7 @@
 .texto {
    color: var(--blanco);
    text-align: center;
-   font-size: 2rem;
+   font-size: 1.7rem;
 }
 
 .enlace {

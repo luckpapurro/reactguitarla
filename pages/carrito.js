@@ -2,8 +2,8 @@ import { useState } from 'react'
 import Layout from '../components/Layout'
 import styles from '../styles/Carrito.module.css'
 
-const Carrito = () => {
-   const [productos, setProductos] = useState([])
+const Carrito = ({ carrito }) => {
+   console.log('🚀 ~ file: carrito.js ~ line 6 ~ Carrito ~ carrito', carrito)
 
    return (
       <Layout nombrePestana="Carrito de compras">
