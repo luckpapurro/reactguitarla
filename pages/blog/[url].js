@@ -52,7 +52,7 @@ export async function getStaticProps({ params: { url } }) {
 // Con getServerSideProps (mas dinamico)
 //
 // export async function getServerSideProps({ query: { id } }) {
-//   // destructuring de router.query.id (no es necesario hacer el import de useRouter y guardarlo en una variable)l
+//   // destructuring de router.query._id (no es necesario hacer el import de useRouter y guardarlo en una variable)l
 
 //   const url = `${process.env.API_URL}/blogs/${id}`;
 //   console.log(url);

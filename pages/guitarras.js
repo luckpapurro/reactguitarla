@@ -15,7 +15,9 @@ const Tienda = ({ guitarras }) => {
 export async function getServerSideProps() {
    const url = `${process.env.API_URL}/guitarras?_sort=published_at:desc` // el ?... es para que ordene por ultimo creado (opcion precio)
    const respuesta = await fetch(url)
+   console.log('🚀 ~ file: guitarras.js ~ line 18 ~ getServerSideProps ~ respuesta', respuesta)
    const guitarras = await respuesta.json()
+   console.log('🚀 ~ file: guitarras.js ~ line 19 ~ getServerSideProps ~ guitarras', guitarras)
 
    return { props: { guitarras } }
 }
