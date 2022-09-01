@@ -21,7 +21,7 @@
    -webkit-box-orient: vertical; /*comandos de css para hacer que se vean solo 6 lineas de texto */
    -webkit-line-clamp: 6;
    overflow: hidden;
-   font-size: 1.6rem;
+   font-size: 1.5rem;
 }
 
 .descripcionUnica {
@@ -33,8 +33,8 @@
 
 .precio {
    color: var(--primary);
-   font-size: 3.5rem;
-   font-weight: 600;
+   font-size: 4rem;
+   font-weight: 900;
    margin: 0;
 }
 

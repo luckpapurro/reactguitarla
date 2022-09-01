@@ -10,7 +10,7 @@ const Home = ({ guitarras, curso, entradas }) => {
          guitarra={guitarras[8]}
       >
          <main className="contenedor">
-            <h1 className="heading">Nuestras Guitarras</h1>
+            <h1 className="heading">Nuestras Guitarras Cabra</h1>
 
             <ListadoGuitarras guitarras={guitarras} />
          </main>
