@@ -18,7 +18,7 @@ const Home = ({ guitarras, curso, entradas }) => {
          <Curso curso={curso} />
 
          <section className="contenedor">
-            <h1 className="heading">Blogs</h1>
+            <h1 className="heading">Ultimos Blogs</h1>
             <ListadoBlogs entradas={entradas} />
          </section>
       </Layout>

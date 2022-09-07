@@ -108,7 +108,7 @@
       display: block;
       position: absolute;
       right: 0;
-      bottom: 169px;
+      bottom: 171px;
       animation-name: mostrarImagen;
       animation-duration: 2s;
       animation-iteration-count: 1; /* si se pone se ejecuta la animacion la cantidad de veces deseada */
