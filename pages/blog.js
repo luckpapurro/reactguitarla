@@ -5,6 +5,7 @@ const Blog = ({ entradas }) => {
    return (
       <Layout nombrePestana="Blog">
          <main className="contenedor">
+            <h1 className="heading">Blogs</h1>
             <ListadoBlogs entradas={entradas} />
          </main>
       </Layout>

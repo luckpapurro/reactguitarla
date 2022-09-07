@@ -55,7 +55,6 @@ const Producto = ({ guitarra, guitarras, agregarCarrito }) => {
          </div>
          <main className="contenedor">
             <h1 className="heading">Otras Guitarras Cabra</h1>
-
             <ListadoGuitarras guitarras={guitarras} />
          </main>
       </Layout>
