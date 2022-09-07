@@ -3,10 +3,10 @@ import '../styles/normalize.css'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-   const [carrito, setCarrito] = useState([]) // de esta forma el state es glopal para todas las paginas
+   const [carrito, setCarrito] = useState([]) // ubicandolo en _apps.js el state es global para todas las paginas
 
    useEffect(() => {
-      // para que al recargar el valor inicial del carrito sea el Local Storage
+      // para que al recargar el valor inicial del carrito sea el Local Storage y no un [] vacio
       const carritoLS = JSON.parse(localStorage.getItem('carrito')) ?? [] // si no hay valor devuelve array vacio
       setCarrito(carritoLS) // el local stora se borraba por eso modifa el archivo next.config.js en reactStrictMode a false y REINICIAR
    }, [])
@@ -16,10 +16,10 @@ function MyApp({ Component, pageProps }) {
    }, [carrito])
 
    const agregarCarrito = (producto) => {
-      if (carrito.some((articulo) => articulo._id === producto._id)) {
+      if (carrito.some((articulo) => articulo._id === producto.id)) {
          const carritoActualizado = carrito.map((articulo) => {
-            if (articulo._id === producto._id) {
-               articulo.cantidad = producto.cantidad // si quisiese sumarle una nueva cantidad iria + articulo
+            if (articulo._id === producto.id) {
+               articulo.cantidad = producto.cantidad // si quisiese sumarle una nueva cantidad iria "+ articulo.cantidad"
             }
             return articulo
          })
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }) {
 
    const actualizarCantidad = (producto) => {
       const carritoActualizado = carrito.map((articulo) => {
-         if (articulo._id === producto._id) {
+         if (articulo._id === producto.id) {
             articulo.cantidad = producto.cantidad
          }
          return articulo
