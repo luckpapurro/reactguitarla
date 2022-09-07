@@ -2,9 +2,10 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
+import ListadoGuitarras from '../../components/ListadoGuitarras'
 import styles from '../../styles/Guitarra.module.css'
 
-const Producto = ({ guitarra, agregarCarrito }) => {
+const Producto = ({ guitarra, guitarras, agregarCarrito }) => {
    const [cantidad, setCantidad] = useState(1)
 
    const { descripcion, imagen, nombre, precio, id } = guitarra[0]
@@ -50,22 +51,38 @@ const Producto = ({ guitarra, agregarCarrito }) => {
                   </select>
                   <input type="submit" value="Agregar al carrito"></input>
                </form>
-               <Link href={`/guitarras/`}>
-                  <a className={styles.enlace}>Volver a tienda online</a>
-               </Link>
             </div>
          </div>
+         <main className="contenedor">
+            <h1 className="heading">Otras Guitarras Cabra</h1>
+
+            <ListadoGuitarras guitarras={guitarras} />
+         </main>
       </Layout>
    )
 }
 
 export async function getServerSideProps({ query: { url } }) {
    const urlGuitarra = `${process.env.API_URL}/guitarras?url=${url}`
-   const respuesta = await fetch(urlGuitarra)
-   const guitarra = await respuesta.json()
+   const urlGuitarras = `${process.env.API_URL}/guitarras?_sort=published_at:desc` // Strapi el ?... es para que ordene por ultimo creado (opcion precio)
 
-   return { props: { guitarra: guitarra } }
+   const [resGuitarra, resGuitarras] = await Promise.all([fetch(urlGuitarra), fetch(urlGuitarras)]) // se usa Promise.all para no trabar esperando respuesta anterior
+
+   const [guitarra, guitarras] = await Promise.all([resGuitarra.json(), resGuitarras.json()])
+
+   return { props: { guitarra, guitarras } }
 }
+
+export default Producto
+
+//ORIGINAL
+// export async function getServerSideProps({ query: { url } }) {
+//    const urlGuitarra = `${process.env.API_URL}/guitarras?url=${url}`
+//    const respuesta = await fetch(urlGuitarra)
+//    const guitarra = await respuesta.json()
+
+//    return { props: { guitarra: guitarra } }
+// }
 
 // export async function getStaticPaths() {
 //    const url = `${process.env.API_URL}/guitarras`
@@ -83,5 +100,3 @@ export async function getServerSideProps({ query: { url } }) {
 //    const guitarra = await respuesta.json()
 //    return { props: { guitarra: guitarra } }
 // }
-
-export default Producto
