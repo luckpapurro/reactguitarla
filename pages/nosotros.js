@@ -3,15 +3,6 @@ import Layout from '../components/Layout'
 import styles from '../styles/Nosotros.module.css'
 
 const Nosotros = () => {
-   ///BORRAR
-   const youtubeRewrite = (url) => {
-      let id = url.slice(url.length - 11)
-      let link = `https://youtube.com/embed/${id}`
-      console.log('🚀 ~ file: nosotros.js ~ line 10 ~ youtubeRewrite ~ link', link)
-   }
-   youtubeRewrite('https://youtube.com/watch=?Joinbdjfkashkjf')
-   youtubeRewrite('https://youtu.be/watch=?joinbdjfkashkjf')
-
    return (
       <Layout nombrePestana="Nosotros">
          <main className="contenedor">
