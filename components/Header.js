@@ -13,7 +13,7 @@ const Header = ({ guitarra }) => {
                <Link href="/">
                   <a>
                      {/* clase 211 como tiraba unos errores explica que si dentro de Link hay imagenes se deben guardar dentro de una etiqueta de enlace*/}
-                     <Image width={400} height={100} src="/img/logo.svg" alt="Imagen logo" />
+                     <Image width={150} height={150} src="/img/CabraLogo.png" alt="Imagen logo" />
                   </a>
                </Link>
                <nav className={styles.navegacion}>
