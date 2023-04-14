@@ -6,7 +6,7 @@ const Layout = ({ children, nombrePestana, guitarra }) => {
    return (
       <div>
          <Head>
-            <title>Guitar LA - {nombrePestana}</title>
+            <title>Cabra Guitars - {nombrePestana}</title>
             <meta name="description" content="Sitio web de venta de guitarras" />
          </Head>
          <Header guitarra={guitarra} />
